@@ -22,5 +22,5 @@ namespace Foody.DataAccessLayer.Context
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
-    } 
+    }
 }
