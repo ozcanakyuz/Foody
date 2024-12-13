@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Foody.DataAccessLayer.Abstract
 {
-    public interface IAdressDal : IGenericDal<Address>
+    public interface IAddressDal : IGenericDal<Address>
     {
     }
 }

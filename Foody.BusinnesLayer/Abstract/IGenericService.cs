@@ -10,7 +10,7 @@ namespace Foody.BusinnesLayer.Abstract
     {
         void TInsert(T entity);
         void TUpdate(T entity);
-        void DTelete(int id);
+        void TDelete(int id);
         List<T> TGetAll();
         T TGetById(int id);
     }
