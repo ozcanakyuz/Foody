@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Foody.DataAccessLayer\Foody.DataAccessLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Shared\_HeadLayoutComponentPartial\" />
-  </ItemGroup>
-
 </Project>
