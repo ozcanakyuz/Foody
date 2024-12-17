@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@await Component.InvokeAsync("_HeadComponentLayoutPartial")
+@await Component.InvokeAsync("_HeadLayoutComponentPartial")
 
 <body>
 	<div class="wrapper">
 
 		@await Component.InvokeAsync("_SidebarLayoutComponentPartial")
 		
-		@await Component.InvokeAsync("_MainPanelLayoutComponentPartial")
+ 		@await Component.InvokeAsync("_MainPanelLayoutComponentPartial")
 		
 		@RenderBody()
 		
