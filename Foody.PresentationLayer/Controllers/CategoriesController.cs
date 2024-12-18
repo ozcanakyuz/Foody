@@ -1,6 +1,7 @@
 ﻿using Foody.BusinnesLayer.Abstract;
 using Foody.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Foody.PresentationLayer.Controllers
 {
@@ -27,7 +28,7 @@ namespace Foody.PresentationLayer.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category category)
         {
-            if(ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return View(category);
             }
@@ -35,6 +36,26 @@ namespace Foody.PresentationLayer.Controllers
 
             return RedirectToAction("CategoryList");
         }
+        public IActionResult DeleteCategory(int id)
+        {
+            _categoryService.TDelete(id);
+            return RedirectToAction("CategoryList");
+        }
 
+        [HttpGet]
+        public IActionResult UpdateCategory(int id)
+        {
+            var value = _categoryService.TGetById(id);
+            return View(value);
+        }
+        public IActionResult UpdateCategory(Category category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(category);
+            }
+            _categoryService.TUpdate(category);
+            return RedirectToAction("CategoryList");
+        }
     }
 }
