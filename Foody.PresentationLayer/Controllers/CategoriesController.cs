@@ -28,12 +28,8 @@ namespace Foody.PresentationLayer.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category category)
         {
-            if(!ModelState.IsValid)
-            {
-                return View(category);
-            }
-            _categoryService.TInsert(category);
 
+            _categoryService.TInsert(category);
             return RedirectToAction("CategoryList");
         }
         public IActionResult DeleteCategory(int id)
@@ -50,10 +46,6 @@ namespace Foody.PresentationLayer.Controllers
         }
         public IActionResult UpdateCategory(Category category)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(category);
-            }
             _categoryService.TUpdate(category);
             return RedirectToAction("CategoryList");
         }
