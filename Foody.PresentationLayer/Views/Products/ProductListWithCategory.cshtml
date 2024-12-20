@@ -1,6 +1,7 @@
 ﻿@model List<Product>
+
 @{
-    ViewData["Title"] = "ProductList";
+    ViewData["Title"] = "ProductListWithCategory";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -43,7 +44,8 @@
                                     <th scope="col">Product Name</th>
                                     <th scope="col">Stock</th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Category Id</th>
+                                    <th scope="col">Cat. Id</th>
+                                    <th scope="col">Cat. Name</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -57,13 +59,14 @@
                                         <td>@item.Stock</td>
                                         <td>@item.Price</td>
                                         <td>@item.CategoryId</td>
+                                        <td>@item.Category.CategoryName</td>
                                         <td><a href="/Products/UpdateProduct/@item.ProductId" class="btn btn-success">Update</a></td>
                                         <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/Products/CreateProduct/" class="btn btn-primary">Add New Product</a>
+                        <a href="/Product/CreateProduct/" class="btn btn-primary">Add New Product</a>
                     </div>
                 </div>
             </div>
