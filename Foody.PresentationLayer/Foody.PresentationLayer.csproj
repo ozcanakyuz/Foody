@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Foody.BusinnesLayer\Foody.BusinnesLayer.csproj" />
     <ProjectReference Include="..\Foody.DataAccessLayer\Foody.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Foody.DtoLayer\Foody.DtoLayer.csproj" />
   </ItemGroup>
 
 </Project>
