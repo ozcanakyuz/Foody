@@ -1,7 +1,7 @@
-﻿@model List<ResultSliderDto>
+﻿@model List<ResultAboutDto>
 
 @{
-    ViewData["Title"] = "SliderList";
+    ViewData["Title"] = "AboutList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -19,13 +19,13 @@
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Slider Lists</a>
+                    <a href="#">About Lists</a>
                 </li>
                 <li class="separator">
                     <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Slider Operations</a>
+                    <a href="#">About Operations</a>
                 </li>
             </ul>
         </div>
@@ -42,6 +42,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -50,15 +51,16 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.SliderId</td>
+                                        <td>@item.AboutId</td>
                                         <td>@item.Title</td>
-                                        <td><a href="/Sliders/UpdateSlider/@item.SliderId" class="btn btn-success">Update</a></td>
-                                    <td><a href="/Sliders/DeleteSlider/@item.SliderId" class="btn btn-danger">Delete</a></td>
+                                        <td>@item.Description</td>
+                                        <td><a href="/Abouts/UpdateAbout/@item.AboutId" class="btn btn-success">Update</a></td>
+                                        <td><a href="/Abouts/DeleteAbout/@item.AboutId" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/Sliders/CreateSlider/" class="btn btn-primary">Add New Slider</a>
+                        <a href="/Abouts/CreateAbout/" class="btn btn-primary">Add New About</a>
                     </div>
                 </div>
             </div>
@@ -66,3 +68,4 @@
         </div>
     </div>
 </div>
+
