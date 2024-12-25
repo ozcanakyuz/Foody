@@ -16,6 +16,12 @@ namespace Foody.BusinnesLayer.Concrete
         {
             _productDal = productDal;
         }
+
+        public List<Product> TProductListWithCategoryAndLast12Items()
+        {
+            return _productDal.ProductListWithCategoryAndLast12Items();
+        }
+
         public void TDelete(int id)
         {
             _productDal.Delete(id);

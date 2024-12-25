@@ -1,0 +1,18 @@
+﻿@model List<Category>
+
+@{
+    bool isFirst = true; // Define a boolean variable to track the first item
+}
+
+<div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+        @foreach(var item in Model) 
+        {
+            <li class="nav-item me-2">
+                <a class="btn btn-outline-primary border-2 @(isFirst ? "active" : "")" data-bs-toggle="pill" href="#tab-1">@item.CategoryName</a>
+            </li>
+            isFirst = false;
+        }
+    </ul>
+</div>
+
