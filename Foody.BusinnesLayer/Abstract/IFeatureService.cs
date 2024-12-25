@@ -9,5 +9,6 @@ namespace Foody.BusinnesLayer.Abstract
 {
     public interface IFeatureService : IGenericService<Feature>
     {
+        List<Feature> TFeatureListByStatusTrue();
     }
 }
