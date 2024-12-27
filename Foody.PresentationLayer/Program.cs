@@ -3,6 +3,8 @@ using Foody.BusinnesLayer.Concrete;
 using Foody.DataAccessLayer.Abstract;
 using Foody.DataAccessLayer.Context;
 using Foody.DataAccessLayer.EntityFramework;
+using Foody.DataAccessLayer.Repositories;
+using System.Configuration;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,7 +45,8 @@ app.UseStatusCodePages(async x =>
     if (x.HttpContext.Response.StatusCode == 404)
     {
         x.HttpContext.Response.Redirect("/ErrorPages/ErrorPage404/");
-    };
+    }
+    await Task.CompletedTask;
 });
 
 // Configure the HTTP request pipeline.

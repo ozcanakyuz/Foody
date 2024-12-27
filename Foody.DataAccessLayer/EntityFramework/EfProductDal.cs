@@ -19,6 +19,11 @@ namespace Foody.DataAccessLayer.EntityFramework
             _context = context;
         }
 
+        public List<Product> GetProductsByCategory(int categoryId)
+        {
+            return _context.Products.Where(p => p.CategoryId == categoryId).ToList();
+        }
+
         public List<Product> ProductListWithCategory()
         {
             var values = _context.Products.Include(x => x.Category).ToList();
@@ -31,5 +36,13 @@ namespace Foody.DataAccessLayer.EntityFramework
                 .Include(y => y.Category).ToList();
             return values;
         }
+        // !
+        //public List<Product> GetProductsByCategory()
+        //{
+        //    var values = _context.Products.OrderByDescending(x => x.ProductId)
+        //        .Include(y => y.Category).ToList();
+        //    return values;
+        //}
+        // !
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Foody.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Foody.DataAccessLayer.Abstract
     {
         List<Product> ProductListWithCategory();
         List<Product> ProductListWithCategoryAndLast12Items();
+        //List<Product> GetProductsByCategory(int categoryId); // !
     }
 }

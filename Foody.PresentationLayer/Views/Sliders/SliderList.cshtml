@@ -42,6 +42,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Title</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -52,6 +53,9 @@
                                     <tr>
                                         <td>@item.SliderId</td>
                                         <td>@item.Title</td>
+                                        <td>
+                                            <img src="@item.ImageUrl" alt="Slider Image" style="width: 100px; height: auto;" />
+                                        </td>
                                         <td><a href="/Sliders/UpdateSlider/@item.SliderId" class="btn btn-success">Update</a></td>
                                     <td><a href="/Sliders/DeleteSlider/@item.SliderId" class="btn btn-danger">Delete</a></td>
                                     </tr>

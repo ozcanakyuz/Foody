@@ -1,6 +1,7 @@
 ﻿using Foody.BusinnesLayer.Abstract;
 using Foody.DataAccessLayer.Abstract;
 using Foody.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,5 +49,12 @@ namespace Foody.BusinnesLayer.Concrete
         {
             _productDal.Update(entity);
         }
+
+        // !
+        //public List<Product> TGetProductsByCategory(int categoryId)
+        //{
+        //    return _productDal.GetProductsByCategory(categoryId);
+        //}
+        // !
     }
 }

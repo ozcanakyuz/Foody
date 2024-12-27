@@ -46,6 +46,7 @@
                                     <th scope="col">Price</th>
                                     <th scope="col">Cat. Id</th>
                                     <th scope="col">Cat. Name</th>
+                                    <th scope="col">Img</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -60,6 +61,9 @@
                                         <td>@item.Price</td>
                                         <td>@item.CategoryId</td>
                                         <td>@item.Category.CategoryName</td>
+                                        <td>
+                                            <img src="@item.ImageUrl" alt="Product Image" style="width: 100px; height: auto;" />
+                                        </td>
                                         <td><a href="/Products/UpdateProduct/@item.ProductId" class="btn btn-success">Update</a></td>
                                         <td><a href="/Products/DeleteProduct/@item.ProductId" class="btn btn-danger">Delete</a></td>
                                     </tr>

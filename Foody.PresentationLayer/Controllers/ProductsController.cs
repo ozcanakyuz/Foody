@@ -2,6 +2,7 @@
 using Foody.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Foody.PresentationLayer.Controllers
 {
@@ -9,7 +10,6 @@ namespace Foody.PresentationLayer.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
-
 
         public ProductsController(IProductService productService, ICategoryService categoryService)
         {

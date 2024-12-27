@@ -1,6 +1,7 @@
-﻿@model List<Product>
+﻿@model List<Feature>
+
 @{
-    ViewData["Title"] = "ProductList";
+    ViewData["Title"] = "FeatureList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -40,11 +41,10 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Stock</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Cat. Id</th>
-                                    <th scope="col">Img</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Update</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -53,21 +53,20 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@item.ProductId</td>
-                                        <td>@item.ProductName</td>
-                                        <td>@item.Stock</td>
-                                        <td>@item.Price</td>
-                                        <td>@item.CategoryId</td>
+                                        <td>@item.FeatureId</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@(item.Status ? "Active" : "Inactive")</td>
                                         <td>
-                                            <img src="@item.ImageUrl" alt="Product Image" style="width: 100px; height: auto;" />
+                                            <img src="@item.ImageUrl" alt="Feature Image" style="width: 100px; height: auto;" />
                                         </td>
-                                        <td><a href="/Products/UpdateProduct/@item.ProductId" class="btn btn-success">Update</a></td>
-                                        <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Delete</a></td>
+                                        <td><a href="/Features/UpdateFeature/@item.FeatureId" class="btn btn-success">Update</a></td>
+                                        <td><a href="/Features/DeleteFeature/@item.FeatureId" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/Products/CreateProduct/" class="btn btn-primary">Add New Product</a>
+                        <a href="/Features/CreateFeature/" class="btn btn-primary">Add New Feature</a>
                     </div>
                 </div>
             </div>
@@ -75,5 +74,7 @@
         </div>
     </div>
 </div>
+
+
 
 

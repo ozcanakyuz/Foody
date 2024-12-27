@@ -10,9 +10,10 @@
         {
             <li class="nav-item me-2">
                 <a class="btn btn-outline-primary border-2 @(isFirst ? "active" : "")" data-bs-toggle="pill" href="#tab-1">@item.CategoryName</a>
+                @* <a class="btn btn-outline-primary border-2 @(isFirst ? "active" : "")" data-bs-toggle="pill" href="@Url.Action("Index", "Product", new { categoryId = item.CategoryId })">@item.CategoryName</a> *@
+                   @* href="/Product/ProductsByCategory?categoryId=@item.CategoryId">@item.CategoryName</a> *@
             </li>
             isFirst = false;
         }
     </ul>
 </div>
-
