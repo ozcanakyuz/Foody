@@ -1,5 +1,6 @@
 ﻿using Foody.BusinnesLayer.Abstract;
 using Foody.DataAccessLayer.Abstract;
+using Foody.DataAccessLayer.Repositories;
 using Foody.EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +14,7 @@ namespace Foody.BusinnesLayer.Concrete
     public class ProductManager : IProductService
     {
         private readonly IProductDal _productDal;
+
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
@@ -22,7 +24,6 @@ namespace Foody.BusinnesLayer.Concrete
         {
             return _productDal.ProductListWithCategoryAndLast12Items();
         }
-
         public void TDelete(int id)
         {
             _productDal.Delete(id);
@@ -51,10 +52,11 @@ namespace Foody.BusinnesLayer.Concrete
         }
 
         // !
-        //public List<Product> TGetProductsByCategory(int categoryId)
-        //{
-        //    return _productDal.GetProductsByCategory(categoryId);
-        //}
+        public List<Product> TGetFoodsByCategory(int categoryId)
+        {
+            return _productDal.GetFoodsByCategory(categoryId);
+        }
         // !
+
     }
 }

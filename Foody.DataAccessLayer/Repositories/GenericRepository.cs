@@ -1,5 +1,6 @@
 ﻿using Foody.DataAccessLayer.Abstract;
 using Foody.DataAccessLayer.Context;
+using Foody.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,5 +41,13 @@ namespace Foody.DataAccessLayer.Repositories
             _context?.Set<T>().Update(entity);
             _context?.SaveChanges();
         }
+
+        //!
+        public List<T> List(Expression<Func<T, bool>> filter)
+        {
+            return _context.Set<T>().Where(filter).ToList();
+        }
+
+        //!
     }
 }

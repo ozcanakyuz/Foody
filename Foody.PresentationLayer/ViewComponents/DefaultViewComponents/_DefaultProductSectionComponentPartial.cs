@@ -1,4 +1,5 @@
 ﻿using Foody.BusinnesLayer.Abstract;
+using Foody.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Foody.PresentationLayer.ViewComponents.DefaultViewComponents
@@ -10,10 +11,12 @@ namespace Foody.PresentationLayer.ViewComponents.DefaultViewComponents
         {
             _productService = productService;
         }
+
         public IViewComponentResult Invoke()
         {
             var values = _productService.TProductListWithCategoryAndLast12Items();
             return View(values);
         }
+
     }
 }

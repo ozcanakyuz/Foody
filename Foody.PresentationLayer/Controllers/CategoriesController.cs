@@ -14,13 +14,11 @@ namespace Foody.PresentationLayer.Controllers
         {
             _categoryService = categoryService;
         }
-
         public IActionResult CategoryList()
         {
             var values = _categoryService.TGetAll();
             return View(values);
         }
-
         [HttpGet]
         public IActionResult CreateCategory()
         {
